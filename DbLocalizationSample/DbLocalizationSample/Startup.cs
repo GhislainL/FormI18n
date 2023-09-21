@@ -14,6 +14,9 @@ using XLocalizer.DB;
 using XLocalizer.Translate.YandexTranslate;
 using XLocalizer.Translate.GoogleTranslate;
 using XLocalizer.Translate.SystranTranslate;
+using FluentValidation;
+using DBLocalizationSample.Pages;
+using FluentValidation.AspNetCore;
 
 namespace DBLocalizationSample
 {
@@ -41,7 +44,7 @@ namespace DBLocalizationSample
 
             services.Configure<RequestLocalizationOptions>(ops =>
             {
-                var cultures = new CultureInfo[] { new CultureInfo("en"), new CultureInfo("tr"), new CultureInfo("ar") };
+                var cultures = new CultureInfo[] { new CultureInfo("en"), new CultureInfo("fr"), new CultureInfo("tr"), new CultureInfo("ar") };
                 ops.SupportedCultures = cultures;
                 ops.SupportedUICultures = cultures;
                 ops.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("en");
@@ -62,6 +65,7 @@ namespace DBLocalizationSample
             //services.AddHttpClient<ITranslator, YandexTranslateService>();
 
             services.AddRazorPages()
+                .AddRazorRuntimeCompilation()
                 .AddRazorPagesOptions(ops => { ops.Conventions.Insert(0, new RouteTemplateModelConventionRazorPages()); })
                 .AddXDbLocalizer<ApplicationDbContext, MyMemoryTranslateService>(ops =>
                 {
@@ -69,6 +73,9 @@ namespace DBLocalizationSample
                     ops.AutoTranslate = true;
                     ops.UseExpressMemoryCache = true;
                 });
+
+            services.AddFluentValidationClientsideAdapters();
+            services.AddValidatorsFromAssemblyContaining<FormCreateCommandValidator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
