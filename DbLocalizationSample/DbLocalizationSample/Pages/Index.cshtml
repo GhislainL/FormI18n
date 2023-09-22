@@ -1,56 +1,181 @@
-﻿@page
-@model IndexModel
+@page
+@model DBLocalizationSample.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
-    var args = new object[] { "https://docs.microsoft.com/aspnet/core", "https://docs.ziyad.info" };
+    ViewData["Title"] = "Form";
 }
 
-<div class="text-center">
-    <h1 class="display-4" localize-content>Welcome</h1>
-    <localize localize-args="args">
-        <p>Learn about <a href="{0}"> building Web apps with ASP.NET Core</a>.</p>
-        <p>Learn about <a href="{1}"> XLocalizer for ASP.NET Core</a>.</p>
-    </localize>
+<h1 localize-content>Form</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+
+            <form method="post">
+                <div asp-validation-summary="All"></div>
+                <div class="form-group">
+                    <label asp-for="Command.Lastname"></label>
+                    <input name="Command.Lastname" type="text" class="form-control" localize-att-placeholder="Lastname" />
+                    <span class="text-danger" asp-validation-for="Command.Lastname"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Command.Firstname"></label>
+                    <input name="Command.Firstname" type="text" class="form-control" localize-att-placeholder="Firstname" />
+                    <span class="text-danger" asp-validation-for="Command.Firstname"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Command.PhoneNumber"></label>
+                    <input name="Command.PhoneNumber" type="text" class="form-control" localize-att-placeholder="PhoneNumber" />
+                    <span class="text-danger" asp-validation-for="Command.PhoneNumber"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Command.Email"></label>
+                    <input name="Command.Email" type="text" class="form-control" localize-att-placeholder="Email" />
+                    <span class="text-danger" asp-validation-for="Command.Email"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Command.Nationality"></label>
+                    <select class="form-select" name="Command.Nationality">
+                        <option value="England" localize-content>England</option>
+                        <option value="France" localize-content>France</option>
+                        <option value="Italy" localize-content>Italy</option>
+                        <option value="Spain" localize-content>Spain</option>
+                    </select>
+                    <span class="text-danger" asp-validation-for="Command.Nationality"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Command.Profession"></label>
+                    <input name="Command.Profession" type="text" class="form-control" localize-att-placeholder="Profession" />
+                    <span class="text-danger" asp-validation-for="Command.Profession"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Command.CountryOfResidence"></label>
+                    <select class="form-select" name="Command.CountryOfResidence">
+                        <option value="England" localize-content>England</option>
+                        <option value="France" localize-content>France</option>
+                        <option value="Italy" localize-content>Italy</option>
+                        <option value="Spain" localize-content>Spain</option>
+                    </select>
+                    <span class="text-danger" asp-validation-for="Command.CountryOfResidence"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Command.Address"></label>
+                    <textarea name="Command.Address" type="text" class="form-control" localize-att-placeholder="Address" rows="3"></textarea>
+                    <span class="text-danger" asp-validation-for="Command.Address"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Command.Residency"></label>
+                    <select class="form-select" name="Command.Residency">
+                        <option value="yes" localize-content>Yes</option>
+                        <option value="no" localize-content>No</option>
+                        <option value="maybe" localize-content>Is not pronounced</option>
+                        <option value="already" localize-content>Already citizen</option>
+                    </select>
+                    <span class="text-danger" asp-validation-for="Command.Residency"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Command.Languages"></label>
+                    <select class="form-select" name="Command.Languages">
+                        <option value="England" localize-content>England</option>
+                        <option value="France" localize-content>France</option>
+                        <option value="Italy" localize-content>Italy</option>
+                        <option value="Spain" localize-content>Spain</option>
+                    </select>
+                    <span class="text-danger" asp-validation-for="Command.Languages"></span>
+                </div>
+
+                <span localize-content>How did you get to know CFM Indosuez ?</span>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Referencement" name="Command.KnowCfm" id="KnowCfm1">
+                    <label class="form-check-label" for="KnowCfm1" localize-content>
+                        Referencement
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Event" name="Command.KnowCfm" id="KnowCfm2">
+                    <label class="form-check-label" for="KnowCfm2" localize-content>
+                        Event
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Client" name="Command.KnowCfm" id="KnowCfm3">
+                    <label class="form-check-label" for="KnowCfm3" localize-content>
+                        CFM Indosuez client
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Counselor" name="Command.KnowCfm" id="KnowCfm4">
+                    <label class="form-check-label" for="KnowCfm4" localize-content>
+                        CFM Indosuez counselor
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Other" name="Command.KnowCfm" id="KnowCfm5">
+                    <label class="form-check-label" for="KnowCfm5" localize-content>
+                        Other
+                    </label>
+                </div>
+
+                <span localize-content>What are your expectations ?</span>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Private banking" name="Command.Expectations" id="Expectation1">
+                    <label class="form-check-label" for="Expectation1" localize-content>
+                        Becoming a private banking client
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Corporate" name="Command.Expectations" id="Expectation2">
+                    <label class="form-check-label" for="Expectation2" localize-content>
+                        Becoming a corporate client
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Information" name="Command.Expectations" id="Expectation3">
+                    <label class="form-check-label" for="Expectation3" localize-content>
+                        Obtaining information on our offer
+                    </label>
+                </div>
+
+                <span localize-content>What are your needs ?</span>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Investments" name="Command.Needs" id="Needs1">
+                    <label class="form-check-label" for="Needs1" localize-content>
+                        Investments
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Financing" name="Command.Needs" id="Needs2">
+                    <label class="form-check-label" for="Needs2" localize-content>
+                        Financing
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Heritage Engineering" name="Command.Needs" id="Needs3">
+                    <label class="form-check-label" for="Needs3" localize-content>
+                        Heritage Engineering
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Other" name="Command.Needs" id="Needs4">
+                    <label class="form-check-label" for="Needs4" localize-content>
+                        Other
+                    </label>
+                </div>
+
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" localize-content>OK</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-2"></div>
+    </div>
 </div>
-
-
-<div class="alert alert-info">
-    <h5 class="alert-heading" localize-content>
-        How to enable online translation support
-    </h5>
-    <p localize-args="@(new object[] { "https://mymemory.translated.net/" })">
-        This sample is using <a href="{0}" target="_blank">MyMemory Translate service</a>, it offers a limited free anonymous usage. To increase the free daily use you can provide a valid email address and a key as described below.
-    </p>
-    <ol>
-        <li localize-args="@(new object[] { "https://mymemory.translated.net/doc/keygen.php" })">
-            Create a key using <a href="{0}" target="_blank">MyMemory API Key Generator</a>.
-        </li>
-        <li localize-content>
-            Right click on the project name and select "Manage User Secrets"
-        </li>
-        <li>
-            <localize>Add the key and your email address to the file as below:</localize>
-            <pre>
-<code class="json" dir="ltr" style="text-align:left">{
-  "XLocalizer.Translate": {
-    "MyMemory": {
-      "Email": "...",
-      "Key": "..."
-    }
-  }
-}
-</code>
-</pre>
-        </li>
-        <li localize-content>Build, run and enjoy the localization :)</li>
-    </ol>
-</div>
-<p class="text-muted small" localize-args="@(new object[] { "https://docs.ziyad.info/en/XLocalizer/v1.0/translate-services.md" })">
-    See <a href="{0}" target="_blank">XLocalizer Docs</a> for all available translation services.
-</p>
-
-@section Scripts{
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-}
