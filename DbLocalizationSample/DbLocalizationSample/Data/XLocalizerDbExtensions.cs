@@ -9,10 +9,11 @@ namespace DBLocalizationSample.Data
         {
             // Seed initial data for localization stores
             modelBuilder.Entity<XDbCulture>().HasData(
-                    new XDbCulture { IsActive = true, IsDefault = true, ID = "en", EnglishName = "English" },
-                    new XDbCulture { IsActive = true, IsDefault = false, ID = "tr", EnglishName = "Turkish" },
-                    new XDbCulture { IsActive = true, IsDefault = false, ID = "ar", EnglishName = "Arabic" }
-                    );
+        new XDbCulture { IsActive = true, IsDefault = true, ID = "en", EnglishName = "English" },
+        new XDbCulture { IsActive = true, IsDefault = false, ID = "fr", EnglishName = "French" },
+        new XDbCulture { IsActive = true, IsDefault = false, ID = "es", EnglishName = "Spanish" },
+        new XDbCulture { IsActive = true, IsDefault = false, ID = "it", EnglishName = "Italian" }
+        );
         }
 
         public static void SeedResourceData(this ModelBuilder modelBuilder)
