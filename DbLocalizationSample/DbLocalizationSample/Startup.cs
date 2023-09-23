@@ -55,7 +55,7 @@ namespace DBLocalizationSample
             // Then add API Keys to user secrets file.
             // For more details see: https://docs.ziyad.info/en/XLocalizer/v1.0/translate-services.md
             // uncomment the services that you want to use for manually translation
-            //services.AddHttpClient<ITranslator, MyMemoryTranslateService>();
+            services.AddHttpClient<ITranslator, MyMemoryTranslateService>();
             //services.AddHttpClient<ITranslator, MyMemoryTranslateServiceRapidApi>();
             //services.AddHttpClient<ITranslator, GoogleTranslateService>();
             //services.AddHttpClient<ITranslator, GoogleTranslateServiceRapidApi>();
@@ -70,7 +70,7 @@ namespace DBLocalizationSample
                 .AddXDbLocalizer<ApplicationDbContext, MyMemoryTranslateService>(ops =>
                 {
                     ops.AutoAddKeys = true;
-                    //ops.AutoTranslate = true;
+                    ops.AutoTranslate = true;
                     ops.UseExpressMemoryCache = false;
                 });
 

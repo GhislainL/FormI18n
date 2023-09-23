@@ -107,4 +107,15 @@ public class IndexModel : PageModel
 
         return LocalRedirect(returnUrl);
     }
+
+    public IActionResult OnPostSetCultureCookie(string cltr)
+    {
+        Response.Cookies.Append(
+            CookieRequestCultureProvider.DefaultCookieName,
+            CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(cltr)),
+            new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+        );
+
+        return Page();
+    }
 }

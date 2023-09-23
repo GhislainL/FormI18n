@@ -1,10 +1,8 @@
 @page
 @model DBLocalizationSample.Pages.IndexModel
 @{
-    ViewData["Title"] = "Form";
+    ViewData["Title"] = "Contact form";
 }
-
-<h1 localize-content>Form</h1>
 
 <div class="container">
     <div class="row">
@@ -12,168 +10,183 @@
         <div class="col-8">
 
             <form method="post">
-                <div asp-validation-summary="All"></div>
-                <div class="form-group">
-                    <label asp-for="Command.Lastname"></label>
-                    <input name="Command.Lastname" type="text" class="form-control" localize-att-placeholder="Lastname" />
-                    <span class="text-danger" asp-validation-for="Command.Lastname"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Command.Firstname"></label>
-                    <input name="Command.Firstname" type="text" class="form-control" localize-att-placeholder="Firstname" />
-                    <span class="text-danger" asp-validation-for="Command.Firstname"></span>
-                </div>
+                <fieldset>
+                    <legend localize-content>Contact form</legend>
+                    <div asp-validation-summary="All"></div>
+                    <div class="form-group">
+                        <label class="form-label mt-4" asp-for="Command.Lastname"></label>
+                        <input name="Command.Lastname" type="text" class="form-control" localize-att-placeholder="Lastname" autocomplete="off" />
+                        <span class="text-danger" asp-validation-for="Command.Lastname"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label mt-4" asp-for="Command.Firstname"></label>
+                        <input name="Command.Firstname" type="text" class="form-control" localize-att-placeholder="Firstname" autocomplete="off" />
+                        <span class="text-danger" asp-validation-for="Command.Firstname"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label asp-for="Command.PhoneNumber"></label>
-                    <input name="Command.PhoneNumber" type="text" class="form-control" localize-att-placeholder="PhoneNumber" />
-                    <span class="text-danger" asp-validation-for="Command.PhoneNumber"></span>
-                </div>
+                    <div class="form-group">
+                        <label class="form-label mt-4" asp-for="Command.PhoneNumber"></label>
+                        <input name="Command.PhoneNumber" type="text" class="form-control" localize-att-placeholder="PhoneNumber" autocomplete="off" />
+                        <span class="text-danger" asp-validation-for="Command.PhoneNumber"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label asp-for="Command.Email"></label>
-                    <input name="Command.Email" type="text" class="form-control" localize-att-placeholder="Email" />
-                    <span class="text-danger" asp-validation-for="Command.Email"></span>
-                </div>
+                    <div class="form-group">
+                        <label class="form-label mt-4" asp-for="Command.Email"></label>
+                        <input name="Command.Email" type="text" class="form-control" localize-att-placeholder="Email" autocomplete="off" />
+                        <span class="text-danger" asp-validation-for="Command.Email"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label asp-for="Command.Nationality"></label>
-                    <select class="form-select" name="Command.Nationality">
-                        <option value="England" localize-content>England</option>
-                        <option value="France" localize-content>France</option>
-                        <option value="Italy" localize-content>Italy</option>
-                        <option value="Spain" localize-content>Spain</option>
-                    </select>
-                    <span class="text-danger" asp-validation-for="Command.Nationality"></span>
-                </div>
+                    <div class="form-group">
+                        <label class="form-label mt-4" asp-for="Command.Nationality"></label>
+                        <select class="form-select" name="Command.Nationality">
+                            <option value="England" localize-content>England</option>
+                            <option value="France" localize-content>France</option>
+                            <option value="Italy" localize-content>Italy</option>
+                            <option value="Spain" localize-content>Spain</option>
+                        </select>
+                        <span class="text-danger" asp-validation-for="Command.Nationality"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label asp-for="Command.Profession"></label>
-                    <input name="Command.Profession" type="text" class="form-control" localize-att-placeholder="Profession" />
-                    <span class="text-danger" asp-validation-for="Command.Profession"></span>
-                </div>
+                    <div class="form-group">
+                        <label class="form-label mt-4" asp-for="Command.Profession"></label>
+                        <input name="Command.Profession" type="text" class="form-control" localize-att-placeholder="Profession" autocomplete="off" />
+                        <span class="text-danger" asp-validation-for="Command.Profession"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label asp-for="Command.CountryOfResidence"></label>
-                    <select class="form-select" name="Command.CountryOfResidence">
-                        <option value="England" localize-content>England</option>
-                        <option value="France" localize-content>France</option>
-                        <option value="Italy" localize-content>Italy</option>
-                        <option value="Spain" localize-content>Spain</option>
-                    </select>
-                    <span class="text-danger" asp-validation-for="Command.CountryOfResidence"></span>
-                </div>
+                    <div class="form-group">
+                        <label class="form-label mt-4" asp-for="Command.CountryOfResidence"></label>
+                        <select class="form-select" name="Command.CountryOfResidence">
+                            <option value="England" localize-content>England</option>
+                            <option value="France" localize-content>France</option>
+                            <option value="Italy" localize-content>Italy</option>
+                            <option value="Spain" localize-content>Spain</option>
+                        </select>
+                        <span class="text-danger" asp-validation-for="Command.CountryOfResidence"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label asp-for="Command.Address"></label>
-                    <textarea name="Command.Address" type="text" class="form-control" localize-att-placeholder="Address" rows="3"></textarea>
-                    <span class="text-danger" asp-validation-for="Command.Address"></span>
-                </div>
+                    <div class="form-group">
+                        <label class="form-label mt-4" asp-for="Command.Address"></label>
+                        <textarea name="Command.Address" type="text" class="form-control" localize-att-placeholder="Address" rows="3" autocomplete="off"></textarea>
+                        <span class="text-danger" asp-validation-for="Command.Address"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label asp-for="Command.Residency"></label>
-                    <select class="form-select" name="Command.Residency">
-                        <option value="yes" localize-content>Yes</option>
-                        <option value="no" localize-content>No</option>
-                        <option value="maybe" localize-content>Is not pronounced</option>
-                        <option value="already" localize-content>Already citizen</option>
-                    </select>
-                    <span class="text-danger" asp-validation-for="Command.Residency"></span>
-                </div>
+                    <div class="form-group">
+                        <label class="form-label mt-4" asp-for="Command.Residency"></label>
+                        <select class="form-select" name="Command.Residency">
+                            <option value="yes" localize-content>Yes</option>
+                            <option value="no" localize-content>No</option>
+                            <option value="maybe" localize-content>Is not pronounced</option>
+                            <option value="already" localize-content>Already citizen</option>
+                        </select>
+                        <span class="text-danger" asp-validation-for="Command.Residency"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label asp-for="Command.Languages"></label>
-                    <select class="form-select" name="Command.Languages">
-                        <option value="England" localize-content>England</option>
-                        <option value="France" localize-content>France</option>
-                        <option value="Italy" localize-content>Italy</option>
-                        <option value="Spain" localize-content>Spain</option>
-                    </select>
-                    <span class="text-danger" asp-validation-for="Command.Languages"></span>
-                </div>
+                    <div class="form-group">
+                        <label class="form-label mt-4" asp-for="Command.Languages"></label>
+                        <select class="form-select" name="Command.Languages">
+                            <option value="England" localize-content>England</option>
+                            <option value="France" localize-content>France</option>
+                            <option value="Italy" localize-content>Italy</option>
+                            <option value="Spain" localize-content>Spain</option>
+                        </select>
+                        <span class="text-danger" asp-validation-for="Command.Languages"></span>
+                    </div>
 
-                <span localize-content>How did you get to know CFM Indosuez ?</span>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Referencement" name="Command.KnowCfm" id="KnowCfm1">
-                    <label class="form-check-label" for="KnowCfm1" localize-content>
-                        Referencement
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Event" name="Command.KnowCfm" id="KnowCfm2">
-                    <label class="form-check-label" for="KnowCfm2" localize-content>
-                        Event
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Client" name="Command.KnowCfm" id="KnowCfm3">
-                    <label class="form-check-label" for="KnowCfm3" localize-content>
-                        CFM Indosuez client
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Counselor" name="Command.KnowCfm" id="KnowCfm4">
-                    <label class="form-check-label" for="KnowCfm4" localize-content>
-                        CFM Indosuez counselor
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Other" name="Command.KnowCfm" id="KnowCfm5">
-                    <label class="form-check-label" for="KnowCfm5" localize-content>
-                        Other
-                    </label>
-                </div>
-
-                <span localize-content>What are your expectations ?</span>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Private banking" name="Command.Expectations" id="Expectation1">
-                    <label class="form-check-label" for="Expectation1" localize-content>
-                        Becoming a private banking client
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Corporate" name="Command.Expectations" id="Expectation2">
-                    <label class="form-check-label" for="Expectation2" localize-content>
-                        Becoming a corporate client
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Information" name="Command.Expectations" id="Expectation3">
-                    <label class="form-check-label" for="Expectation3" localize-content>
-                        Obtaining information on our offer
-                    </label>
-                </div>
-
-                <span localize-content>What are your needs ?</span>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Investments" name="Command.Needs" id="Needs1">
-                    <label class="form-check-label" for="Needs1" localize-content>
-                        Investments
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Financing" name="Command.Needs" id="Needs2">
-                    <label class="form-check-label" for="Needs2" localize-content>
-                        Financing
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Heritage Engineering" name="Command.Needs" id="Needs3">
-                    <label class="form-check-label" for="Needs3" localize-content>
-                        Heritage Engineering
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Other" name="Command.Needs" id="Needs4">
-                    <label class="form-check-label" for="Needs4" localize-content>
-                        Other
-                    </label>
-                </div>
+                    <fieldset class="form-group">
+                        <legend class="mt-4" localize-content>How did you get to know CFM Indosuez ?</legend>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Referencement" name="Command.KnowCfm" id="KnowCfm1">
+                            <label class="form-check-label" for="KnowCfm1" localize-content>
+                                Referencement
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Event" name="Command.KnowCfm" id="KnowCfm2">
+                            <label class="form-check-label" for="KnowCfm2" localize-content>
+                                Event
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Client" name="Command.KnowCfm" id="KnowCfm3">
+                            <label class="form-check-label" for="KnowCfm3" localize-content>
+                                CFM Indosuez client
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Counselor" name="Command.KnowCfm" id="KnowCfm4">
+                            <label class="form-check-label" for="KnowCfm4" localize-content>
+                                CFM Indosuez counselor
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Other" name="Command.KnowCfm" id="KnowCfm5">
+                            <label class="form-check-label" for="KnowCfm5" localize-content>
+                                Other
+                            </label>
+                        </div>
+                    </fieldset>
 
 
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary" localize-content>OK</button>
-                </div>
+                    <fieldset class="form-group">
+                        <legend class="mt-4" localize-content>What are your expectations ?</legend>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Private banking" name="Command.Expectations" id="Expectation1">
+                            <label class="form-check-label" for="Expectation1" localize-content>
+                                Becoming a private banking client
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Corporate" name="Command.Expectations" id="Expectation2">
+                            <label class="form-check-label" for="Expectation2" localize-content>
+                                Becoming a corporate client
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Information" name="Command.Expectations" id="Expectation3">
+                            <label class="form-check-label" for="Expectation3" localize-content>
+                                Obtaining information on our offer
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <legend class="mt-4" localize-content>What are your needs ?</legend>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Investments" name="Command.Needs" id="Needs1">
+                            <label class="form-check-label" for="Needs1" localize-content>
+                                Investments
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Financing" name="Command.Needs" id="Needs2">
+                            <label class="form-check-label" for="Needs2" localize-content>
+                                Financing
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Heritage Engineering" name="Command.Needs" id="Needs3">
+                            <label class="form-check-label" for="Needs3" localize-content>
+                                Heritage Engineering
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Other" name="Command.Needs" id="Needs4">
+                            <label class="form-check-label" for="Needs4" localize-content>
+                                Other
+                            </label>
+                        </div>
+
+                        @* <div class="form-group">
+                            <label for="formFile" class="form-label mt-4">Default file input example</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div> *@
+                    </fieldset>
+                    <br />
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary bg-sable text-uppercase" localize-content>Submit</button>
+                    </div>
+                </fieldset>
+
             </form>
         </div>
         <div class="col-2"></div>

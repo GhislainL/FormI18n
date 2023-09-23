@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using XLocalizer.DB.Models;
 
 namespace DBLocalizationSample.Data
@@ -31,7 +29,7 @@ namespace DBLocalizationSample.Data
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.SeedCultures();
-            builder.SeedResourceData();
+            //builder.SeedResourceData();
 
             base.OnModelCreating(builder);
         }
